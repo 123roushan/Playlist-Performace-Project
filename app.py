@@ -10,7 +10,7 @@ st.caption("Top 50 Streaming Chart | May 2024 – Nov 2025")
 # --- Load & prep data ---
 @st.cache_data
 def load_data():
-    df = pd.read_csv(r"C:\Users\Admin\Desktop\Playlist Performance\Atlantic_United_States.csv")
+    df = pd.read_csv(r"Atlantic_United_States.csv")
     df["date"] = pd.to_datetime(df["date"], dayfirst=True)
     df["duration_min"] = df["duration_ms"] / 60000
     df["month"] = df["date"].dt.to_period("M").astype(str)
